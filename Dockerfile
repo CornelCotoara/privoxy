@@ -2,12 +2,12 @@
 # Dockerfile for privoxy
 #
 
-FROM alpine
-MAINTAINER kev <noreply@easypi.pro>
+FROM alpine:edge
+#MAINTAINER kev <noreply@easypi.pro>
 
 RUN set -xe \
     && apk add -U curl privoxy \
-    && curl -sSL https://github.com/tianon/gosu/releases/download/1.9/gosu-amd64 > /usr/sbin/gosu \
+    && curl -sSL https://github.com/tianon/gosu/releases/download/1.14/gosu-amd64 > /usr/sbin/gosu \
     && chmod +x /usr/sbin/gosu \
     && apk del curl \
     && rm -rf /var/cache/apk/*
