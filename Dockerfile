@@ -12,9 +12,7 @@ RUN set -xe \
     && apk del curl \
     && rm -rf /var/cache/apk/*
 
-CMD mkdir -p /etc/privoxy
-CMD touch /etc/privoxy/config
-CMD sed -i -e '/^listen-address/s/127.0.0.1/0.0.0.0/' \
+RUN sed -i -e '/^listen-address/s/127.0.0.1/0.0.0.0/' \
            -e '/^accept-intercepted-requests/s/0/1/' \
            -e '/^enforce-blocks/s/0/1/' \
            -e '/^#debug/s/#//' /etc/privoxy/config
@@ -26,5 +24,5 @@ EXPOSE 8118
 #CMD gosu privoxy --no-daemon /etc/privoxy/config
 
 RUN chown privoxy.privoxy /etc/privoxy/*
-#ENTRYPOINT ["privoxy"]
-#CMD ["--no-daemon","--user","privoxy","/etc/privoxy/config"]
+ENTRYPOINT ["privoxy"]
+CMD ["--no-daemon","--user","privoxy","/etc/privoxy/config"]
