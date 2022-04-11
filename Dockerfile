@@ -6,7 +6,7 @@ FROM alpine:edge
 # MAINTAINER kev <noreply@easypi.pro>
 
 RUN set -xe \
-    && apk add -U curl privoxy \
+    && apk add -U curl privoxy sed \
     && curl -sSL https://github.com/tianon/gosu/releases/download/1.14/gosu-amd64 > /usr/sbin/gosu \
     && chmod +x /usr/sbin/gosu \
     && apk del curl \
