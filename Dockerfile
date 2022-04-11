@@ -3,7 +3,7 @@
 #
 
 FROM alpine:edge
-#MAINTAINER kev <noreply@easypi.pro>
+# MAINTAINER kev <noreply@easypi.pro>
 
 RUN set -xe \
     && apk add -U curl privoxy \
