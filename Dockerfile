@@ -23,4 +23,8 @@ VOLUME /etc/privoxy
 
 EXPOSE 8118
 
-CMD gosu privoxy --no-daemon /etc/privoxy/config
+#CMD gosu privoxy --no-daemon /etc/privoxy/config
+
+RUN chown privoxy.privoxy /etc/privoxy/*
+ENTRYPOINT ["privoxy"]
+CMD ["--no-daemon","--user","privoxy","/etc/privoxy/config"]
