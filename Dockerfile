@@ -22,4 +22,4 @@ VOLUME /etc/privoxy
 
 EXPOSE 8118
 
-CMD gosu privoxy privoxy --no-daemon /etc/privoxy/config
+CMD gosu privoxy --no-daemon /etc/privoxy/config
