@@ -939,7 +939,7 @@ enable-remote-http-toggle  0
 #      Note that you must have compiled Privoxy with support for this
 #      feature, otherwise this option has no effect.
 #
-enable-edit-actions 0
+enable-edit-actions 1
 #
 #  4.6. enforce-blocks
 #  ====================
@@ -985,7 +985,7 @@ enable-edit-actions 0
 #
 #  Example:
 #
-#      enforce-blocks 1
+      enforce-blocks 1
 #
 enforce-blocks 0
 #
@@ -1574,7 +1574,7 @@ forwarded-connect-retries  0
 #
 #  Example:
 #
-#      accept-intercepted-requests 1
+      accept-intercepted-requests 1
 #
 accept-intercepted-requests 0
 #
